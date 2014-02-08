@@ -1,0 +1,120 @@
+2014-02-08T21:33:17.054992+00:00 heroku[api]: Enable Logplex by pihvi@live.com
+2014-02-08T21:33:17.107062+00:00 heroku[api]: Release v2 created by pihvi@live.com
+2014-02-08T21:35:24+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T21:35:38.971975+00:00 heroku[api]: Scale to web=1 by pihvi@live.com
+2014-02-08T21:35:39.027322+00:00 heroku[api]: Deploy 822122f by pihvi@live.com
+2014-02-08T21:35:39.066381+00:00 heroku[api]: Release v3 created by pihvi@live.com
+2014-02-08T21:35:39+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T21:35:42.337354+00:00 heroku[web.1]: Starting process with command `node web.js`
+2014-02-08T21:35:42.533270+00:00 heroku[web.1]: Starting process with command `node web.js`
+2014-02-08T21:35:44.160645+00:00 app[web.1]: Listening on 50389
+2014-02-08T21:35:44.539919+00:00 app[web.1]: Listening on 21969
+2014-02-08T21:35:46.378492+00:00 app[web.1]: 10.228.29.47 - - [Sat, 08 Feb 2014 21:35:46 GMT] "GET / HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36"
+2014-02-08T21:35:46.735245+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=beer-challenge.herokuapp.com request_id=bc2eb3f8-2429-48a8-bdfb-ada57fdec5d0 fwd="82.181.178.90" dyno=web.1 connect=8ms service=21ms status=404 bytes=35
+2014-02-08T21:35:46.733369+00:00 app[web.1]: 10.121.17.38 - - [Sat, 08 Feb 2014 21:35:46 GMT] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36"
+2014-02-08T21:35:46.381571+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.herokuapp.com request_id=d393a0e9-7f98-49d4-bdd3-5f8d669de5ae fwd="82.181.178.90" dyno=web.1 connect=1ms service=18ms status=200 bytes=12
+2014-02-08T21:35:47.670206+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2014-02-08T21:35:49.575900+00:00 heroku[web.1]: Process exited with status 143
+2014-02-08T21:36:03.584866+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=a15d22de-0e2b-4bc7-9d48-94c2d9380830 fwd="82.181.178.90" dyno=web.1 connect=7ms service=6ms status=200 bytes=12
+2014-02-08T21:36:03.582486+00:00 app[web.1]: 10.220.203.128 - - [Sat, 08 Feb 2014 21:36:03 GMT] "GET / HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) Version/7.0.1 Safari/537.73.11"
+2014-02-08T21:35:44.395714+00:00 heroku[web.1]: State changed from starting to up
+2014-02-08T21:52:59+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T21:53:05.219531+00:00 heroku[api]: Deploy d1fe37e by pihvi@live.com
+2014-02-08T21:53:05.237568+00:00 heroku[api]: Release v4 created by pihvi@live.com
+2014-02-08T21:53:05+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T21:53:05.607932+00:00 heroku[web.1]: State changed from up to starting
+2014-02-08T21:53:08.870926+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2014-02-08T21:53:11.109986+00:00 heroku[web.1]: Process exited with status 143
+2014-02-08T22:12:58.111134+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=f1123a62-7d82-46dc-91dc-6f1eca1f3a34 fwd="82.181.178.90" dyno=web.1 connect=4ms service=15ms status=200 bytes=14
+2014-02-08T22:13:06+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T22:13:07.326859+00:00 heroku[web.1]: State changed from up to starting
+2014-02-08T22:13:09.550766+00:00 heroku[web.1]: Starting process with command `$WEB`
+2014-02-08T22:13:11.759564+00:00 heroku[web.1]: Process exited with status 0
+2014-02-08T22:13:11.774153+00:00 heroku[web.1]: State changed from starting to crashed
+2014-02-08T22:13:11.774845+00:00 heroku[web.1]: State changed from crashed to starting
+2014-02-08T22:13:06.167704+00:00 heroku[api]: Release v5 created by pihvi@live.com
+2014-02-08T22:13:06.152499+00:00 heroku[api]: Deploy 4c0f6e2 by pihvi@live.com
+2014-02-08T22:42:54+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T22:42:58.343233+00:00 heroku[api]: Deploy 65c8bfb by pihvi@live.com
+2014-02-08T22:42:58.362951+00:00 heroku[api]: Release v6 created by pihvi@live.com
+2014-02-08T22:42:58+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T22:42:58.985298+00:00 heroku[web.1]: State changed from crashed to starting
+2014-02-08T22:43:00.482461+00:00 heroku[web.1]: Starting process with command `$WEB`
+2014-02-08T22:43:02.801188+00:00 heroku[web.1]: Process exited with status 0
+2014-02-08T22:43:02.822684+00:00 heroku[web.1]: State changed from crashed to starting
+2014-02-08T22:43:02.821824+00:00 heroku[web.1]: State changed from starting to crashed
+2014-02-08T22:43:06.303713+00:00 heroku[web.1]: State changed from starting to crashed
+2014-02-08T22:43:41.206973+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=1a500a2f-503b-484a-917d-c6dc1efa7ce2 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:44:01.909642+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=025cd10d-63b4-4c19-9e8c-b33afe4e45d5 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:44:06.087179+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=f30dfef4-09f6-400d-bbcf-b5c0873a8c30 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:38+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T22:46:42.575219+00:00 heroku[api]: Deploy 4c0f6e2 by pihvi@live.com
+2014-02-08T22:46:42.590119+00:00 heroku[api]: Release v7 created by pihvi@live.com
+2014-02-08T22:46:42+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T22:46:42.821514+00:00 heroku[web.1]: State changed from crashed to starting
+2014-02-08T22:46:46.737158+00:00 heroku[web.1]: State changed from starting to crashed
+2014-02-08T22:46:47.992642+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=8626bfb9-401d-490c-b6f0-7809ec2c37dd fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:50.308818+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=53907896-2232-4997-887d-ac1181486470 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:51.271841+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=893adc00-0d19-4552-bee6-b04c35ebfade fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:53.000705+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=cfc15120-cf63-4df4-bc18-fa5001f12493 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:54.085405+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=841c8a44-a5eb-44f4-bf62-21fde6e35c8c fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:53.438615+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=eadf3559-8cca-4af3-aab0-e102e659d7a4 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:54.227369+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=9efdc5c6-ad41-4ee7-8dfa-c8b47b8485c0 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:52.240234+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=3a20fe9e-3a17-4a09-8a5b-8a8da1c39d60 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:54.427829+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=0abd29a5-3fc6-410c-b11d-57c6726b29e7 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:48:00.683671+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=ddf54f8e-4da1-4ccb-b0fb-b0fa30af270b fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:46:53.797490+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=beer-challenge.com request_id=51be9369-de38-430b-8d14-b522b03ea498 fwd="82.181.178.90" dyno= connect= service= status=503 bytes=
+2014-02-08T22:52:29+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T22:52:33.378310+00:00 heroku[api]: Deploy cf24224 by pihvi@live.com
+2014-02-08T22:52:33.399180+00:00 heroku[api]: Release v8 created by pihvi@live.com
+2014-02-08T22:52:33+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T22:52:35.782708+00:00 heroku[web.1]: Starting process with command `node web.js`
+2014-02-08T22:52:37.051060+00:00 app[web.1]: Listening on 24732
+2014-02-08T22:52:37.543453+00:00 heroku[web.1]: State changed from starting to up
+2014-02-08T22:52:43.171345+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=576240ae-d765-4cce-abf6-7ee7bbde3c0d fwd="82.181.178.90" dyno=web.1 connect=2ms service=34ms status=200 bytes=14
+2014-02-08T22:52:43.168531+00:00 app[web.1]: 10.185.51.198 - - [Sat, 08 Feb 2014 22:52:43 GMT] "GET / HTTP/1.1" 200 14 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) Version/7.0.1 Safari/537.73.11"
+2014-02-08T22:53:11+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T22:53:15.526801+00:00 heroku[api]: Deploy c177f73 by pihvi@live.com
+2014-02-08T22:53:15.543795+00:00 heroku[api]: Release v9 created by pihvi@live.com
+2014-02-08T22:53:15+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T22:53:17.499540+00:00 heroku[web.1]: Starting process with command `node web.js`
+2014-02-08T22:53:18.366622+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2014-02-08T22:53:18.506534+00:00 app[web.1]: Listening on 23950
+2014-02-08T22:53:19.191323+00:00 heroku[web.1]: State changed from starting to up
+2014-02-08T22:53:19.958870+00:00 app[web.1]: 10.178.3.37 - - [Sat, 08 Feb 2014 22:53:19 GMT] "GET / HTTP/1.1" 200 34669 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) Version/7.0.1 Safari/537.73.11"
+2014-02-08T22:53:20.277410+00:00 heroku[web.1]: Process exited with status 143
+2014-02-08T22:53:33.439470+00:00 app[web.1]: 10.137.5.173 - - [Sat, 08 Feb 2014 22:53:33 GMT] "GET / HTTP/1.1" 200 34669 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:27.0) Gecko/20100101 Firefox/27.0"
+2014-02-08T22:53:34.712871+00:00 app[web.1]: 10.137.11.119 - - [Sat, 08 Feb 2014 22:53:34 GMT] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:27.0) Gecko/20100101 Firefox/27.0"
+2014-02-08T22:54:42.629092+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=0b54facb-2c4d-4821-8c6a-ed8bae2ab3d1 fwd="82.181.178.90" dyno=web.1 connect=1ms service=12ms status=200 bytes=34669
+2014-02-08T22:54:42.626787+00:00 app[web.1]: 10.42.117.146 - - [Sat, 08 Feb 2014 22:54:42 GMT] "GET / HTTP/1.1" 200 34669 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) Version/7.0.1 Safari/537.73.11"
+2014-02-08T22:52:33.801806+00:00 heroku[web.1]: State changed from crashed to starting
+2014-02-08T22:53:15.810162+00:00 heroku[web.1]: State changed from up to starting
+2014-02-08T23:17:20+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-08T23:17:26.259425+00:00 heroku[api]: Deploy cfd90f2 by pihvi@live.com
+2014-02-08T23:17:26.311065+00:00 heroku[api]: Release v10 created by pihvi@live.com
+2014-02-08T23:17:26+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-08T23:17:26.568485+00:00 heroku[web.1]: State changed from up to starting
+2014-02-08T23:17:28.595890+00:00 heroku[web.1]: Starting process with command `node web.js`
+2014-02-08T23:17:29.191682+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2014-02-08T23:17:30.050800+00:00 app[web.1]: connect.multipart() will be removed in connect 3.0
+2014-02-08T23:17:30.051003+00:00 app[web.1]: visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+2014-02-08T23:17:30.051472+00:00 app[web.1]: connect.limit() will be removed in connect 3.0
+2014-02-08T23:17:30.067189+00:00 app[web.1]: Listening on 25008
+2014-02-08T23:17:30.488434+00:00 heroku[web.1]: State changed from starting to up
+2014-02-08T23:17:30.962652+00:00 heroku[web.1]: Process exited with status 143
+2014-02-08T23:17:31.589489+00:00 app[web.1]: 10.191.95.193 - - [Sat, 08 Feb 2014 23:17:31 GMT] "GET / HTTP/1.1" 200 35288 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) Version/7.0.1 Safari/537.73.11"
+2014-02-08T23:17:31.977521+00:00 app[web.1]: No beer { msg: 'WebGL not supported' }
+2014-02-08T23:17:31.978744+00:00 app[web.1]: 10.137.5.173 - - [Sat, 08 Feb 2014 23:17:31 GMT] "POST /noBeer HTTP/1.1" 200 - "http://beer-challenge.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) Version/7.0.1 Safari/537.73.11"
+2014-02-08T23:17:44.016997+00:00 app[web.1]: 10.198.106.45 - - [Sat, 08 Feb 2014 23:17:44 GMT] "GET / HTTP/1.1" 200 35288 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:27.0) Gecko/20100101 Firefox/27.0"
+2014-02-08T23:17:44.019446+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=888d4c13-821f-4b2e-bfd5-1336123c4ea3 fwd="82.181.178.90" dyno=web.1 connect=3ms service=25ms status=200 bytes=35288
+2014-02-08T23:18:15.470325+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=fe88ba64-2960-4466-8cbe-dedf2fb2a280 fwd="82.181.178.90" dyno=web.1 connect=1ms service=14ms status=200 bytes=35288
+2014-02-08T23:18:15.471385+00:00 app[web.1]: 10.164.99.73 - - [Sat, 08 Feb 2014 23:18:15 GMT] "GET / HTTP/1.1" 200 35288 "-" "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)"
+2014-02-08T23:18:15.999976+00:00 app[web.1]: No beer { msg: 'WebGL not supported' }
+2014-02-08T23:18:16.000577+00:00 app[web.1]: 10.62.21.36 - - [Sat, 08 Feb 2014 23:18:16 GMT] "POST /noBeer HTTP/1.1" 200 - "http://beer-challenge.com/" "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)"
+2014-02-08T23:17:31.593700+00:00 heroku[router]: at=info method=GET path=/ host=bee
+r-challenge.com request_id=2e15b462-08d8-4f56-89c9-6830ddde4c0a fwd="82.181.178.90" dyno=web.1 connect=2ms service=43ms status=200 bytes=35288
+2014-02-08T23:25:38.310513+00:00 heroku[router]: at=info method=GET path=/ host=www.beer-challenge.com request_id=edd0f100-0925-48ca-b5ea-d5ef9eb311a2 fwd="82.181.178.90" dyno=web.1 connect=2ms service=22ms status=200 bytes=35288
+2014-02-08T23:25:38.307464+00:00 app[web.1]: 10.214.110.82 - - [Sat, 08 Feb 2014 23:25:38 GMT] "GET / HTTP/1.1" 200 35288 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36"
+2014-02-08T23:25:44.969403+00:00 app[web.1]: 10.141.147.44 - - [Sat, 08 Feb 2014 23:25:44 GMT] "GET / HTTP/1.1" 200 35288 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36"
+2014-02-08T23:25:44.971028+00:00 heroku[router]: at=info method=GET path=/ host=beer-challenge.com request_id=999bba36-78f8-475f-8240-8e792d8266a6 fwd="82.181.178.90" dyno=web.1 connect=1ms service=50ms status=200 bytes=35288
+2014-02-08T23:25:49.184973+00:00 app[web.1]: 10.137.11.119 - - [Sat, 08 Feb 2014 23:25:49 GMT] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36"
