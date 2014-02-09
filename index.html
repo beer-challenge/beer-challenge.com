@@ -936,10 +936,8 @@ void main(void){
     frame = 0;
   }
 
-  var hidden = false;
-  function hide(){
-    hidden = !hidden;
-    document.getElementById("desc").style.setProperty('visibility', hidden?'hidden':'visible' );
+  function hide() {
+    $('#content').toggle()
   }
 
   function noBeer(msg) {
