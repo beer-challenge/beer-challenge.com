@@ -937,11 +937,20 @@ void main(void){
   }
 
   function hide() {
-    $('#content').toggle()
+    //$('#content').toggle()
   }
 
   function noBeer(msg) {
     $.post('/noBeer', {'msg':msg})
+  }
+
+  function challenge() {
+    if ($('#email:valid')) {
+      $.post('/contact', $('#email').serialize())
+      $('#form input').hide()
+      $('#thanks').show()
+    }
+    return false
   }
   </script>
   <link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
@@ -957,12 +966,33 @@ void main(void){
       width: 100%;
       margin: auto;
       text-align: center;
-      font-family: 'Frijole', cursive;
+      font-family: 'Frijole';
       font-size: 300%;
       color: #ffc310;
     }
     body {
       background-color: #3158ff;
+    }
+    #submit {
+      font-family: 'Frijole';
+      font-size: 150%;
+      color: #ffd90e;
+      background-color: rgb(78, 132, 255);
+      background-color: rgba(78, 132, 255, .8);
+      border: none;
+      cursor: pointer;
+    }
+    #email {
+      background-color: rgb(255, 255, 255);
+      background-color: rgba(255, 255, 255, .9);
+      display: block;
+      margin: 1em auto;
+      font-size: 110%;
+      width: 16em;
+    }
+    #thanks {
+      display: none;
+      margin-top: 2em;
     }
   </style>
 </head>
@@ -970,7 +1000,12 @@ void main(void){
 <body onload="load()" ondblclick="hide()">
 <div id="content">
   <h1>Beer Challenge</h1>
-  <strong>Coming soon!</strong>
+  <strong>coming soon</strong>
+  <form id="form" onsubmit="return challenge()">
+    <input required placeholder="Enter email for challenge invite!" id="email" type="email" name="email" />
+    <input id="submit" type="submit" value="Chalenge me"/>
+    <div id="thanks">Cheers, we shall, soon enough!</div>
+  </form>
 </div>
 <canvas id="c"></canvas>
 </body>
