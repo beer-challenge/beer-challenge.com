@@ -9,6 +9,11 @@ app.get('/', function(req, res) {
   res.render('index.html')
 })
 
+app.get('/nexus', function(req, res) {
+  var file = __dirname + '/BeerChallenge.apk'
+  res.download(file)
+})
+
 app.post('/noBeer', function(req, res) {
   console.log('No beer', req.body)
   res.end()
