@@ -15,6 +15,9 @@ app.get('/nexus', function(req, res) {
 })
 
 app.post('/highscores', function(req, res) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'POST')
+  res.header('Access-Control-Allow-Headers', 'Content-Type')
   console.log('Highscores', req.body)
   res.send({
     list: [
