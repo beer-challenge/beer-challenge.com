@@ -101,10 +101,10 @@ var initRoutes = function(db){
     console.log('Highscores', req.body)
 
     var data = {
-      name: req.body.user,
+      name: req.body.user? req.body.user : "???",
       time: parseInt(req.body.score, 10),
       createdAt: new Date(),
-      location: req.body.location
+      location: req.body.location,
     }
 
     if(!data.time){
