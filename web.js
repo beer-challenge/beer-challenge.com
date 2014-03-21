@@ -51,21 +51,26 @@ var initRoutes = function(db){
   var getHighscores = function(type, cb){
     var start, end
     if(type == "24h"){
-      start = new Date(2010, 3, 1);
-      end = new Date(2010, 4, 1);
+      start = moment().subtract(24, "h").toDate()
     }
 
-    db.collection('highscore').find({}).toArray(function(err, data){
-      if(err){
-        console.error("Unable to get highscores:", JSON.stringify(err))
-        cb(null)
-      }
-      else{
-        console.log("highscore data: ", data)
-        data = formatHighscoreData(data, type)
-        cb(data)
-      }
-    })
+    console.log("type:", type, "start:", start)
+
+    db.collection('highscore')
+      .find({createdAt: {$gte: start}})
+      .sort( { score: -1 } )
+      .limit(10)
+      .toArray(function(err, data){
+        if(err){
+          console.error("Unable to get highscores:", JSON.stringify(err))
+          cb(null)
+        }
+        else{
+          console.log("highscore data: ", data)
+          data = formatHighscoreData(data, type)
+          cb(data)
+        }
+      })
   }
 
   var formatHighscoreData = function(data, type){
@@ -85,7 +90,9 @@ var initRoutes = function(db){
       }
     }
 
-    getHighscores("24h", cb)
+    type = req.query.type? req.query.type : "24h"
+
+    getHighscores(type, cb)
   })
 
   app.post('/highscores', function(req, res) {
