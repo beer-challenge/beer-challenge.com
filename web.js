@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var mongoClient = require('mongodb').MongoClient
 var mongoUri = process.env.MONGOHQ_URL || "mongodb://localhost:27017/beerchallenge"
+var moment = require('moment')
 
 var mockData = {
   list: [
@@ -48,6 +49,12 @@ var initRoutes = function(db){
   })
 
   var getHighscores = function(type, cb){
+    var start, end
+    if(type == "24h"){
+      start = new Date(2010, 3, 1);
+      end = new Date(2010, 4, 1);
+    }
+
     db.collection('highscore').find({}).toArray(function(err, data){
       if(err){
         console.error("Unable to get highscores:", JSON.stringify(err))
@@ -55,9 +62,17 @@ var initRoutes = function(db){
       }
       else{
         console.log("highscore data: ", data)
+        data = formatHighscoreData(data, type)
         cb(data)
       }
     })
+  }
+
+  var formatHighscoreData = function(data, type){
+    return {
+      list: data,
+      type: type
+    }
   }
 
   app.get('/highscores', function(req, res) {
@@ -89,10 +104,7 @@ var initRoutes = function(db){
     var respond = function(data){
       console.log("highscore respond", data)
       if(data){
-        res.send({
-          list: data,
-          type: "24h"
-        })
+        res.send(data)
       }
       else{
         res.send(500)
