@@ -1,10 +1,5 @@
 var express = require('express')
 var app = express()
-app.use(express.logger())
-app.use(express.bodyParser())
-app.set('views', __dirname + '/')
-app.engine('html', require('ejs').renderFile)
-
 var mongoClient = require('mongodb').MongoClient
 var mongoUri = process.env.MONGOHQ_URL || "mongodb://localhost:27017/beerchallenge"
 
@@ -22,6 +17,14 @@ var mockData = {
     { name: 'rte', time: '221.8' },
   ],
   type: '24h'
+}
+
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
 }
 
 var initDb = function(cb){
@@ -57,15 +60,30 @@ var initRoutes = function(db){
     })
   }
 
+  app.get('/highscores', function(req, res) {
+    var cb = function(data){
+      if(!data){
+        res.send(400)
+      }
+      else{
+        res.send(data)
+      }
+    }
+
+    getHighscores("24h", cb)
+  })
+
   app.post('/highscores', function(req, res) {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Methods', 'POST')
-    res.header('Access-Control-Allow-Headers', 'Content-Type')
     console.log('Highscores', req.body)
 
     var data = {
       name: req.body.user,
-      time: req.body.score
+      time: req.body.score,
+      createdAt: new Date()
+    }
+
+    if(!data.time){
+      res.send(400)
     }
 
     var respond = function(data){
@@ -126,6 +144,13 @@ var init = function(){
   initDb(cb)
 
   var port = process.env.PORT || 5000
+
+  app.use(express.logger())
+  app.use(express.bodyParser())
+  app.use(allowCrossDomain);
+  app.set('views', __dirname + '/')
+  app.engine('html', require('ejs').renderFile)
+
   app.listen(port, function() {
     console.log("Listening on " + port)
   })
