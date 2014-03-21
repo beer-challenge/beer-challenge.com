@@ -48,7 +48,7 @@ var initRoutes = function(db){
     res.download(file)
   })
 
-  var getHighscores = function(type, cb){
+  var getHighscores = function(type, cb, place){
     var start, end
     if(type == "24h"){
       start = moment().subtract(24, "h").toDate()
@@ -59,7 +59,7 @@ var initRoutes = function(db){
     db.collection('highscore')
       .find({createdAt: {$gte: start}})
       .sort( { score: -1 } )
-      .limit(10)
+      .limit(5)
       .toArray(function(err, data){
         if(err){
           console.error("Unable to get highscores:", JSON.stringify(err))
@@ -67,16 +67,17 @@ var initRoutes = function(db){
         }
         else{
           console.log("highscore data: ", data)
-          data = formatHighscoreData(data, type)
+          data = formatHighscoreData(data, type, place)
           cb(data)
         }
       })
   }
 
-  var formatHighscoreData = function(data, type){
+  var formatHighscoreData = function(data, type, place){
     return {
       list: data,
-      type: type
+      type: type,
+      place: place
     }
   }
 
@@ -100,7 +101,7 @@ var initRoutes = function(db){
 
     var data = {
       name: req.body.user,
-      time: req.body.score,
+      time: parseInt(req.body.score, 10),
       createdAt: new Date()
     }
 
@@ -118,14 +119,33 @@ var initRoutes = function(db){
       }
     }
 
-    db.collection('highscore').insert(data, function(err, data){
+    var getTimePlacement = function(val, cb){
+      console.log("getTimePlacement", val)
+      db.collection('highscore')
+      .find({time: {$lte: val}})
+      .sort( { time: -1} )
+      .toArray(function(err, data){
+        if(err){
+          console.error("Unable to get highscores:", JSON.stringify(err))
+          cb(null)
+        }
+        else{
+          console.log("placement data: ", data.length)
+          cb(data.length)
+        }
+      })
+    }
+
+    db.collection('highscore').insert(data, function(err, mongoData){
       if(err){
         console.error("Unable to save to database:", JSON.stringify(err))
         res.send(500)
       }
       else{
-        console.log("highscore saved to database: ",  data)
-        getHighscores("24h", respond)
+        console.log("highscore saved to database: ", mongoData, data.time)
+        getTimePlacement(data.time, function(place){
+          getHighscores("24h", respond, place)
+        })
       }
     })
   })
