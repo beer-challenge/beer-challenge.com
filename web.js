@@ -103,7 +103,8 @@ var initRoutes = function(db){
     var data = {
       name: req.body.user,
       time: parseInt(req.body.score, 10),
-      createdAt: new Date()
+      createdAt: new Date(),
+      location: req.body.location
     }
 
     if(!data.time){
