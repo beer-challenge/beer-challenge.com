@@ -48,7 +48,7 @@ var initRoutes = function(db){
     res.download(file)
   })
 
-  var getHighscores = function(type, cb, place){
+  var getHighscores = function(type, size, cb, place){
     var start, end
     if(type == "24h"){
       start = moment().subtract(24, "h").toDate()
@@ -57,7 +57,7 @@ var initRoutes = function(db){
     console.log("type:", type, "start:", start)
 
     db.collection('highscore')
-      .find({createdAt: {$gte: start}})
+      .find({createdAt: {$gte: start}, size: size})
       .sort( { score: -1 } )
       .limit(5)
       .toArray(function(err, data){
@@ -91,9 +91,10 @@ var initRoutes = function(db){
       }
     }
 
-    type = req.query.type? req.query.type : "24h"
+    var type = req.query.type? req.query.type : "24h"
+    var size = req.query.size? req.query.size : 500
 
-    getHighscores(type, cb)
+    getHighscores(type, size, cb)
   })
 
   app.post('/highscores', function(req, res) {
@@ -107,6 +108,10 @@ var initRoutes = function(db){
 
     if(!data.time){
       res.send(400)
+    }
+
+    if(!req.body.size){
+      data.size = 500
     }
 
     var respond = function(data){
@@ -144,7 +149,7 @@ var initRoutes = function(db){
       else{
         console.log("highscore saved to database: ", mongoData, data.time)
         getTimePlacement(data.time, function(place){
-          getHighscores("24h", respond, place)
+          getHighscores("24h", data.size, respond, place)
         })
       }
     })
