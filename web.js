@@ -58,8 +58,8 @@ var initRoutes = function(db){
 
     db.collection('highscore')
       .find({createdAt: {$gte: start}, size: size})
-      .sort( { score: -1 } )
-      .limit(5)
+      .sort( { time: 1 } )
+      .limit(10)
       .toArray(function(err, data){
         if(err){
           console.error("Unable to get highscores:", JSON.stringify(err))
