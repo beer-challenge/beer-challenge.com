@@ -4,22 +4,6 @@ var mongoClient = require('mongodb').MongoClient
 var mongoUri = process.env.MONGOHQ_URL || "mongodb://localhost:27017/beerchallenge"
 var moment = require('moment')
 
-var mockData = {
-  list: [
-    { name: 'yue', time: '1.1' },
-    { name: 'rgd', time: '1.2' },
-    { name: 'lop', time: '2.0' },
-    { name: 'xxx', time: '2.2' },
-    { name: 'lui', time: '3.1' },
-    { name: 'wer', time: '7.3' },
-    { name: 'bvn', time: '12.1' },
-    { name: 'iuo', time: '111.1' },
-    { name: 'iop', time: '123.0' },
-    { name: 'rte', time: '221.8' },
-  ],
-  type: '24h'
-}
-
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -104,11 +88,12 @@ var initRoutes = function(db){
       name: req.body.user? req.body.user : "???",
       time: parseInt(req.body.score, 10),
       createdAt: new Date(),
-      location: req.body.location,
+      location: req.body.location
     }
 
     if(!data.time){
       res.send(400)
+      return
     }
 
     if(!req.body.size){
