@@ -88,7 +88,7 @@ text-transform:none;
 /* Control Nav */
 .flex-control-nav {position: absolute; bottom: -40px; left:0px;right:0px;text-align: center;}
 .flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
-.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #27c9a9;cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px;}
+.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #ffffff;cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px;}
 .flex-control-paging li a:hover { background: #18af91;}
 .flex-control-paging li a.flex-active { background: #18af91; cursor: default; }
 
