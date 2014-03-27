@@ -12,6 +12,13 @@ var allowCrossDomain = function(req, res, next) {
     next();
 }
 
+app.use("/css", express.static(__dirname + '/css'))
+app.use("/font", express.static(__dirname + '/font'))
+app.use("/images", express.static(__dirname + '/images'))
+app.use("/js", express.static(__dirname + '/js'))
+app.use("/demo", express.static(__dirname + '/demo'))
+app.use("/fontello-0f2985ab", express.static(__dirname + '/fontello-0f2985ab'))
+
 var initDb = function(cb){
   console.log("init db")
   mongoClient.connect(mongoUri, function(err, db){
